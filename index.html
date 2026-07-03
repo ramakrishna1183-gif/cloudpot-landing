@@ -189,9 +189,26 @@
 
     /* ============ HOW ============ */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 44px; }
-    .step .snum { font-family: var(--font-head); font-weight: 700; font-size: 38px; color: var(--oak); line-height: 1; margin-bottom: 12px; }
+    .step { border-top: 2px solid transparent; padding-top: 14px; }
+    .step-guide { border-top-color: var(--oak); }
+    .step-cp { border-top-color: var(--forest); }
+    .step .snum { font-family: var(--font-head); font-weight: 700; font-size: 38px; color: var(--oak); line-height: 1; margin-bottom: 10px; }
+    .step-cp .snum { color: var(--forest); }
     .step h3 { font-family: var(--font-head); font-weight: 600; font-size: 17px; margin-bottom: 8px; color: var(--bark-900); }
     .step p { font-size: 14px; color: var(--clay-500); line-height: 1.58; }
+    .step-tag { display: inline-block; font-family: var(--font-mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--oak); background: rgba(169,114,60,0.1); padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; }
+    /* two-phase bracket over the steps */
+    .phase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+    .phase { border-radius: 14px; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; transition: background 0.18s; }
+    a.phase { text-decoration: none; }
+    .phase-guide { background: rgba(169,114,60,0.08); border: 1px solid rgba(169,114,60,0.35); }
+    a.phase-guide:hover { background: rgba(169,114,60,0.15); }
+    .phase-cp { background: rgba(53,83,62,0.07); border: 1px solid rgba(53,83,62,0.3); }
+    .phase-label { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oak); }
+    .phase-cp .phase-label { color: var(--forest); }
+    .phase-desc { font-family: var(--font-head); font-weight: 600; font-size: 15px; color: var(--bark-900); }
+    .inline-link { color: var(--oak); font-weight: 600; border-bottom: 1px solid rgba(169,114,60,0.4); transition: color 0.18s; }
+    .inline-link:hover { color: var(--oak-hover); }
 
     /* ============ PRODUCTS ============ */
     .products { padding: 88px 0; }
@@ -256,7 +273,7 @@
       .hero-copy h1 { font-size: 34px; }
       .sec-pad, .products, .about { padding-top: 56px; padding-bottom: 56px; }
       h2.sec, .contact-left h2, .vision h2 { font-size: 28px; }
-      .why-grid, .diff-grid, .steps, .aggregator { grid-template-columns: 1fr; }
+      .why-grid, .diff-grid, .steps, .aggregator, .phase-row { grid-template-columns: 1fr; }
       .aggregator { flex-direction: column; }
       .agg-arrow { justify-content: center; transform: rotate(90deg); }
       .product-left { padding: 36px 26px; }
@@ -448,27 +465,42 @@
 <!-- HOW -->
 <section id="how">
   <div class="wrap sec-pad">
-    <div class="sec-head narrow">
+    <div class="sec-head">
       <div class="eyebrow">How we work</div>
       <h2 class="sec">Our 4-step service delivery.</h2>
+      <p class="sec-body" style="margin-top:14px;">It starts with getting the problem right. Steps 1&ndash;2 are exactly what our own product, <a class="inline-link" href="https://beyondtheorywhatworks.com" target="_blank" rel="noopener">Beyond Theory Guide</a>, is built to do &mdash; it helps you work out what to actually do before spending a euro. When the answer calls for an IT solution, CloudPot takes over for steps 3&ndash;4 and delivers it through our partner network.</p>
     </div>
+
+    <div class="phase-row">
+      <a class="phase phase-guide" href="https://beyondtheorywhatworks.com" target="_blank" rel="noopener">
+        <span class="phase-label">Steps 1&ndash;2 · Beyond Theory Guide</span>
+        <span class="phase-desc">Figure out what to actually do →</span>
+      </a>
+      <div class="phase phase-cp">
+        <span class="phase-label">Steps 3&ndash;4 · CloudPot + partner network</span>
+        <span class="phase-desc">Deliver the right IT solution</span>
+      </div>
+    </div>
+
     <div class="steps">
-      <div class="step">
+      <div class="step step-guide">
         <div class="snum">1</div>
+        <span class="step-tag">↳ Beyond Theory Guide</span>
         <h3>Consultation</h3>
-        <p>We start by understanding your business, your challenges, and where you want to go.</p>
+        <p>We start by understanding your business, your challenges, and where you want to go &mdash; the same disciplined diagnosis the Guide runs.</p>
       </div>
-      <div class="step">
+      <div class="step step-guide">
         <div class="snum">2</div>
+        <span class="step-tag">↳ Beyond Theory Guide</span>
         <h3>Gather requirements</h3>
-        <p>An in-depth assessment of your needs, opportunities, and constraints.</p>
+        <p>An in-depth assessment of your needs, opportunities, and constraints. When it points to an IT solution, CloudPot steps in.</p>
       </div>
-      <div class="step">
+      <div class="step step-cp">
         <div class="snum">3</div>
         <h3>Provide recommendation</h3>
         <p>A clear, comprehensive proposal drawing on the right partners for the job.</p>
       </div>
-      <div class="step">
+      <div class="step step-cp">
         <div class="snum">4</div>
         <h3>Manage delivery</h3>
         <p>We coordinate implementation and support, so you stay focused on your business.</p>
@@ -486,6 +518,7 @@
         <h2>Beyond Theory Guide</h2>
         <div class="ptag">Figure out what to do, then learn how to do it.</div>
         <p>An advisor in your corner — for solving a problem, chasing an opportunity, or getting something done at work. It helps project leaders work out what to do, then coaches them through how, step by step. Built for the accidental project leader in SMEs.</p>
+        <p style="color:var(--bamboo);font-size:14px;">It's the front door to how we work: the Guide runs the diagnosis (steps 1–2 above). When the outcome is an IT solution, CloudPot delivers it through our specialist partner network.</p>
         <a href="https://beyondtheorywhatworks.com" target="_blank" rel="noopener" class="btn btn-onbamboo">Visit Beyond Theory Guide →</a>
       </div>
       <div class="product-right">
