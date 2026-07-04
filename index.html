@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CloudPot — Make IT possible | Aggregated IT services & consulting for SMEs</title>
-  <meta name="description" content="One call. A whole pot of specialists. CloudPot keeps a vetted pool of IT partners and consulting for SMEs in the Netherlands — one accountable relationship for the whole IT spectrum, without the complexity or the cost." />
+  <meta name="description" content="One call. A whole pot of specialists. CloudPot keeps a vetted pool of IT partners and consulting for SMEs in the Netherlands — one accountable relationship across cloud, security, software, web and support, without the complexity or the cost." />
   <meta property="og:title" content="CloudPot — Make IT possible" />
   <meta property="og:description" content="One call. A whole pot of specialists. Aggregated IT services and consulting for SMEs." />
   <meta property="og:type" content="website" />
@@ -15,32 +15,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Grove 2A — warm linen neutrals */
-      --canvas:   #E4DECF;
-      --linen:    #F2EDE1;
-      --oatmeal:  #E7E1D2;
-      --surface3: #FBF8F0;
-      --hairline: #C9C0AA;
-      --border:   #C0B69C;
-      --ink:      #23221B;
-      --ink-2:    #3E3A2E;
+      /* Combined teal variant — lighter warm cream neutrals */
+      --canvas:   #F3EDE0;   /* body bg — lighter warm cream (was #E4DECF) */
+      --linen:    #EDE7D8;   /* band / alt section tint */
+      --oatmeal:  #E8E2D5;   /* card fill */
+      --surface3: #FBF8F0;   /* near-white surface */
+      --hairline: #D8D0C0;   /* subtle divider on light bg */
+      --border:   #CBC2AC;   /* neutral border */
+      --ink:      #1C1C1A;   /* near-black body */
+      --ink-2:    #4A4540;   /* muted body */
       --muted:    #6E6552;
       --faint:    #9A9079;
       --label:    #857D68;
       /* accents */
-      --oak:        #A9723C;
-      --oak-border: #8F5F30;
-      --oak-dark:   #C68A4A;
-      --forest:     #35533E;
-      --leaf:       #6E8E56;
-      --bamboo:     #BCAF6B;
-      --on-accent:  #F2EDE1;
+      --teal:        #2A7A8A;   /* tech-credibility signal (dominant accent) */
+      --teal-node:   #1A5565;   /* darker teal for node text */
+      --teal-bg:     #EEF6F8;   /* near-white teal tint (node fill) */
+      --amber:       #8B6030;   /* logo "Pot" + eyebrows */
+      --amber-dark:  #6E4B24;
+      --cta:         #4A3015;   /* deep urgency brown (primary CTA) */
+      --cta-hover:   #5E3E1D;
+      --forest:      #1E3D28;   /* dark band + orbit center */
+      --leaf:        #6E8E56;
+      --bamboo:      #BCAF6B;
+      --gold:        #C9A84C;
+      --on-accent:   #F2EDE1;
       /* dark band */
-      --deep-grove: #1C1F1A;
+      --deep-grove: #161E16;
       --on-dark:    #ECE7D9;
       --on-dark-2:  #C9C5B7;
       --on-dark-3:  #9D9A86;
-      --dark-hair:  #3C4235;
+      --dark-hair:  #2F4033;
 
       --font-head: 'Poppins', system-ui, sans-serif;
       --font-body: 'Work Sans', system-ui, sans-serif;
@@ -59,7 +64,7 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--oak); color: var(--on-accent); }
+    ::selection { background: var(--teal); color: var(--on-accent); }
 
     .wrap { max-width: 1180px; margin: 0 auto; }
     section { padding: clamp(56px,8vw,104px) clamp(24px,5vw,72px); }
@@ -68,7 +73,7 @@
     /* shared type */
     .eyebrow {
       font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--oak);
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
       margin-bottom: 18px;
     }
     h1, h2, h3 { font-family: var(--font-head); }
@@ -78,23 +83,23 @@
 
     /* buttons */
     .btn { display: inline-block; font-family: var(--font-head); font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 4px; border: 1px solid transparent; cursor: pointer; transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; white-space: nowrap; }
-    .btn-primary { background: var(--oak); color: var(--on-accent); border-color: var(--oak-border); }
-    .btn-primary:hover { background: var(--oak-border); }
-    .btn-secondary { background: var(--linen); color: var(--ink); border-color: var(--border); }
-    .btn-secondary:hover { border-color: var(--oak); color: var(--oak); }
+    .btn-primary { background: var(--cta); color: var(--on-accent); border-color: var(--cta); }
+    .btn-primary:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+    .btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
     .btn-bamboo { background: var(--bamboo); color: #16190F; border-color: var(--bamboo); }
     .btn-bamboo:hover { background: #ccbf7c; }
 
     /* ============ NAV ============ */
-    nav { position: sticky; top: 0; z-index: 50; background: rgba(242,237,225,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--hairline); }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(243,237,224,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--hairline); }
     .nav-inner { max-width: 1180px; margin: 0 auto; padding: 14px clamp(20px,4vw,40px); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .wordmark { font-family: var(--font-head); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--ink); }
-    .wordmark b { color: var(--oak); font-weight: 700; }
+    .wordmark b { color: var(--amber); font-weight: 700; }
     .nav-links { display: flex; align-items: center; gap: clamp(14px,2.4vw,30px); list-style: none; }
     .nav-links a { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--ink-2); transition: color 0.18s; }
-    .nav-links a:hover { color: var(--oak); }
-    .nav-cta { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--on-accent); background: var(--oak); border: 1px solid var(--oak-border); border-radius: 4px; padding: 9px 16px; white-space: nowrap; transition: background 0.18s; }
-    .nav-cta:hover { background: var(--oak-border); color: var(--on-accent); }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--on-accent); background: var(--cta); border: 1px solid var(--cta); border-radius: 4px; padding: 9px 16px; white-space: nowrap; transition: background 0.18s; }
+    .nav-cta:hover { background: var(--cta-hover); color: var(--on-accent); }
 
     /* ============ HERO ============ */
     .hero-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px,5vw,64px); align-items: center; }
@@ -102,25 +107,25 @@
     .hero-copy h1 { font-weight: 800; font-size: clamp(38px,5.6vw,60px); line-height: 1.02; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 22px; }
     .hero-copy p.hsub { font-family: var(--font-body); font-size: clamp(17px,1.8vw,20px); line-height: 1.55; color: var(--ink-2); max-width: 520px; margin-bottom: 30px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-    .hero-voice { font-family: var(--font-voice); font-style: italic; font-size: 17px; color: var(--muted); margin-top: 30px; padding-left: 16px; border-left: 2px solid var(--oak); }
+    .hero-voice { font-family: var(--font-voice); font-style: italic; font-size: 17px; color: var(--teal); font-weight: 500; margin-top: 30px; padding-left: 16px; border-left: 3px solid var(--teal); }
 
     /* orbit graphic */
     .orbit { position: relative; width: min(440px,86vw); aspect-ratio: 1; margin: 0 auto; }
     .orbit .ring { position: absolute; border-radius: 50%; }
-    .orbit .ring-1 { inset: 6%; border: 1px dashed var(--border); }
-    .orbit .ring-2 { inset: 22%; border: 1px dashed var(--hairline); }
-    .orbit .pot { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 36%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 34%, #2F4A37, #161E16 84%); border: 1px solid var(--forest); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 6px 20px rgba(35,34,25,0.18); }
+    .orbit .ring-1 { inset: 6%; border: 1px dashed var(--teal); opacity: 0.75; }
+    .orbit .ring-2 { inset: 22%; border: 1px dashed var(--teal); opacity: 0.55; }
+    .orbit .pot { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 36%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 34%, #2F4A37, #161E16 84%); border: 1px solid var(--forest); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 6px 20px rgba(28,28,26,0.18); }
     .orbit .pot .pn { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: var(--linen); }
-    .orbit .pot .pn b { color: var(--bamboo); font-weight: 700; }
+    .orbit .pot .pn b { color: var(--gold); font-weight: 700; }
     .orbit .pot .pt { font-family: var(--font-voice); font-style: italic; font-size: 14px; color: #F2EFE8; margin-top: 4px; }
     .chip { position: absolute; transform: translate(-50%,-50%); }
-    .chip span { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); background: var(--linen); border: 1px solid var(--border); border-radius: 2px; padding: 6px 11px; }
-    .orbit-caption { max-width: 440px; margin: 14px auto 0; text-align: center; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--label); }
+    .chip span { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-node); background: var(--teal-bg); border: 1px solid var(--teal); border-radius: 2px; padding: 6px 11px; }
+    .orbit-caption { max-width: 440px; margin: 14px auto 0; text-align: center; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
 
     /* ============ PROBLEM ============ */
     .two-col { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,72px); align-items: start; }
     .problem-body p { font-family: var(--font-body); font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: var(--ink-2); margin-bottom: 18px; }
-    .problem-body .voice { font-size: 20px; line-height: 1.45; color: var(--forest); margin-top: 8px; }
+    .problem-body .voice { font-size: 20px; line-height: 1.45; color: var(--teal); margin-top: 8px; }
 
     /* ============ POT ============ */
     .sec-intro { max-width: 720px; margin: 0 0 clamp(40px,5vw,56px); }
@@ -129,9 +134,9 @@
     .g3 { grid-template-columns: repeat(3,1fr); }
     .g4 { grid-template-columns: repeat(4,1fr); }
     .g2 { grid-template-columns: 1fr 1fr; }
-    .cell { background: var(--linen); padding: clamp(24px,3vw,34px); }
+    .cell { background: var(--surface3); padding: clamp(24px,3vw,34px); }
     .cell .clabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); margin-bottom: 12px; }
-    .cell .clabel.oak { color: var(--oak); }
+    .cell .clabel.teal { color: var(--teal); }
     .cell h3 { font-weight: 600; font-size: 21px; margin-bottom: 10px; color: var(--ink); }
     .cell p { font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 
@@ -142,16 +147,16 @@
     .cmp-col.with { background: var(--surface3); }
     .cmp-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
     .cmp-col.alone .cmp-label { color: var(--muted); }
-    .cmp-col.with .cmp-label { color: var(--oak); }
+    .cmp-col.with .cmp-label { color: var(--teal); }
     .cmp-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .cmp-list li { font-family: var(--font-body); font-size: 16px; line-height: 1.4; display: flex; gap: 12px; }
     .cmp-col.alone li { color: var(--muted); }
     .cmp-col.alone li .mk { color: var(--faint); }
     .cmp-col.with li { color: var(--ink); }
-    .cmp-col.with li .mk { color: var(--leaf); }
+    .cmp-col.with li .mk { color: var(--teal); }
     .diff-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,3vw,32px); margin-top: clamp(28px,3vw,36px); }
     .diff-item { padding-top: 18px; }
-    .diff-item.oak { border-top: 2px solid var(--oak); }
+    .diff-item.teal { border-top: 2px solid var(--teal); }
     .diff-item.forest { border-top: 2px solid var(--forest); }
     .diff-item h3 { font-weight: 600; font-size: 20px; margin-bottom: 8px; color: var(--ink); }
     .diff-item p { font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--ink-2); }
@@ -161,50 +166,50 @@
     .phase { display: flex; align-items: center; gap: 10px; padding: 10px 4px; }
     .phase .bar { height: 2px; width: 22px; display: inline-block; }
     .phase .plabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
-    .phase.oak .bar { background: var(--oak); } .phase.oak .plabel { color: var(--oak); }
-    .phase.forest .bar { background: var(--forest); } .phase.forest .plabel { color: var(--forest); }
-    .step { background: var(--linen); padding: clamp(22px,2.4vw,30px); }
-    .step.guide { border-top: 3px solid var(--oak); }
-    .step.cp { border-top: 3px solid var(--forest); }
+    .phase.amber .bar { background: var(--amber); } .phase.amber .plabel { color: var(--amber); }
+    .phase.teal .bar { background: var(--teal); } .phase.teal .plabel { color: var(--teal); }
+    .step { background: var(--surface3); padding: clamp(22px,2.4vw,30px); border: 1px solid var(--teal); }
+    .step.guide { border-top: 3px solid var(--amber); }
+    .step.cp { border-top: 3px solid var(--teal); }
     .step .snum { font-family: var(--font-mono); font-size: 11px; font-weight: 500; margin-bottom: 6px; }
-    .step.guide .snum { color: var(--oak); }
-    .step.cp .snum { color: var(--forest); }
+    .step.guide .snum { color: var(--amber); }
+    .step.cp .snum { color: var(--teal); }
     .step .stag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--label); margin-bottom: 12px; }
     .step h3 { font-weight: 600; font-size: 18px; margin-bottom: 8px; color: var(--ink); }
     .step p { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--ink-2); }
-    .inline-link { color: var(--oak); text-decoration: underline; text-underline-offset: 2px; }
+    .inline-link { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
     /* ============ GUIDE (dark band) ============ */
     #guide { background: radial-gradient(circle at 50% 25%, #2F4A37, #161E16 84%); color: var(--on-dark); }
     .guide-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px,5vw,64px); align-items: center; }
-    #guide .eyebrow { color: var(--bamboo); }
+    #guide .eyebrow { color: var(--gold); }
     #guide h2 { font-size: clamp(30px,4.4vw,48px); line-height: 1.04; color: var(--linen); margin-bottom: 8px; }
-    #guide .gsub { font-family: var(--font-voice); font-style: italic; font-size: clamp(18px,2vw,22px); color: var(--bamboo); margin-bottom: 22px; }
+    #guide .gsub { font-family: var(--font-voice); font-style: italic; font-size: clamp(18px,2vw,22px); color: var(--gold); margin-bottom: 22px; }
     #guide p.gbody { font-family: var(--font-body); font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: var(--on-dark-2); margin-bottom: 16px; }
     #guide .gbody.last { margin-bottom: 28px; }
-    .guide-card { border: 1px solid var(--dark-hair); border-radius: 8px; background: rgba(28,31,26,0.55); padding: clamp(24px,3vw,34px); }
-    .guide-card .gclabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bamboo); margin-bottom: 18px; }
+    .guide-card { border: 1px solid var(--dark-hair); border-radius: 8px; background: rgba(22,30,22,0.55); padding: clamp(24px,3vw,34px); }
+    .guide-card .gclabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .guide-rows { display: flex; flex-direction: column; gap: 16px; }
     .guide-row { display: flex; gap: 14px; align-items: flex-start; }
     .guide-row .gn { font-family: var(--font-mono); font-size: 11px; margin-top: 2px; }
     .guide-row .gn.leaf { color: #7BA05F; }
-    .guide-row .gn.oak { color: var(--oak-dark); }
+    .guide-row .gn.teal { color: #5FB0C0; }
     .guide-row .gt { font-family: var(--font-head); font-weight: 600; font-size: 16px; color: var(--on-dark); }
     .guide-row .gd { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--on-dark-3); }
     .guide-div { height: 1px; background: var(--dark-hair); }
 
     /* ============ CONTACT ============ */
     .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
-    .contact-left { background: var(--linen); padding: clamp(26px,3vw,38px); display: flex; flex-direction: column; gap: 22px; }
+    .contact-left { background: var(--surface3); padding: clamp(26px,3vw,38px); display: flex; flex-direction: column; gap: 22px; }
     .cblabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); margin-bottom: 8px; }
     .cphone { font-family: var(--font-head); font-weight: 600; font-size: clamp(22px,3vw,30px); color: var(--ink); }
-    .cemail { font-family: var(--font-head); font-weight: 600; font-size: clamp(16px,2vw,20px); color: var(--oak); }
+    .cemail { font-family: var(--font-head); font-weight: 600; font-size: clamp(16px,2vw,20px); color: var(--teal); }
     .contact-div { height: 1px; background: var(--hairline); }
     .contact-right { background: var(--oatmeal); padding: clamp(26px,3vw,38px); }
-    .contact-right .crlabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); margin-bottom: 18px; }
+    .contact-right .crlabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
     .promises { display: flex; flex-direction: column; gap: 16px; }
     .promise { display: flex; gap: 12px; align-items: flex-start; }
-    .promise .mk { color: var(--leaf); font-size: 16px; line-height: 1.4; }
+    .promise .mk { color: var(--teal); font-size: 16px; line-height: 1.4; }
     .promise span.txt { font-family: var(--font-body); font-size: 15px; line-height: 1.45; color: var(--ink-2); }
 
     /* ============ FOOTER ============ */
@@ -212,7 +217,7 @@
     .footer-inner { max-width: 1180px; margin: 0 auto; }
     .footer-top { display: flex; justify-content: space-between; gap: 28px; flex-wrap: wrap; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid var(--dark-hair); }
     .footer-brand .fm { font-family: var(--font-head); font-weight: 700; font-size: 22px; color: var(--on-dark); }
-    .footer-brand .fm b { color: var(--oak-dark); }
+    .footer-brand .fm b { color: var(--gold); }
     .footer-brand .ftag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bamboo); margin-top: 8px; }
     .footer-links { display: flex; gap: clamp(18px,3vw,34px); flex-wrap: wrap; }
     .footer-links a { font-family: var(--font-body); font-size: 14px; color: var(--on-dark-3); transition: color 0.18s; }
@@ -270,12 +275,12 @@
           <div class="pn">Cloud<b>Pot</b></div>
           <div class="pt">Make IT possible.</div>
         </div>
-        <div class="chip" style="left:50%; top:6%;"><span>Cloud</span></div>
+        <div class="chip" style="left:50%; top:6%;"><span>Business Apps</span></div>
         <div class="chip" style="left:90%; top:28%;"><span>Security</span></div>
-        <div class="chip" style="left:90%; top:72%;"><span>Networks</span></div>
-        <div class="chip" style="left:50%; top:94%;"><span>Software</span></div>
-        <div class="chip" style="left:10%; top:72%;"><span>Hardware</span></div>
-        <div class="chip" style="left:10%; top:28%;"><span>Support</span></div>
+        <div class="chip" style="left:90%; top:72%;"><span>Software</span></div>
+        <div class="chip" style="left:50%; top:94%;"><span>Websites</span></div>
+        <div class="chip" style="left:10%; top:72%;"><span>Support</span></div>
+        <div class="chip" style="left:10%; top:28%;"><span>Managed IT</span></div>
       </div>
       <div class="orbit-caption">You → one call → CloudPot → the right specialists</div>
     </div>
@@ -290,7 +295,7 @@
       <h2>IT shouldn't mean managing ten relationships.</h2>
     </div>
     <div class="problem-body">
-      <p>You run an SME. You need a site that works, a network that doesn't fall over, and advice you can trust — without hiring a CIO or signing ten contracts. Go supplier by supplier and you carry all of it: finding them, vetting them, chasing them when something breaks.</p>
+      <p>You run an SME. You need software that works, systems you can trust, and advice you can act on — without hiring a CIO or signing ten contracts. Go supplier by supplier and you carry all of it: finding them, vetting them, chasing them when something breaks.</p>
       <p>That's the part we take off your desk. We think every business deserves good technology without a big-company budget — so we built the pot instead of another agency. You get one relationship; behind it sits a bench of specialists we already know and trust.</p>
       <p class="voice">You run your business. Not a dozen suppliers.</p>
     </div>
@@ -301,8 +306,8 @@
 <section id="pot">
   <div class="wrap">
     <div class="eyebrow">How the pot works</div>
-    <h2 class="wide">One accountable relationship. The whole IT spectrum behind it.</h2>
-    <p class="lead sec-intro">Every partner in the pot is excellent at one thing — cloud, security, networks, software, hardware, support. We hold those relationships so you don't. Brief us once; we assemble the right people and stay on the hook for the result.</p>
+    <h2 class="wide">One accountable relationship. A bench of specialists behind it.</h2>
+    <p class="lead sec-intro">Every partner in the pot is excellent at one thing — business apps, security, software, websites, support, and managed IT. We hold those relationships so you don't. Brief us once; we assemble the right people and stay on the hook for the result.</p>
     <div class="hair-grid g3">
       <div class="cell">
         <div class="clabel">You</div>
@@ -310,7 +315,7 @@
         <p>One conversation about what you're trying to do — not a spec sheet. We start by getting the problem right.</p>
       </div>
       <div class="cell">
-        <div class="clabel oak">CloudPot</div>
+        <div class="clabel teal">CloudPot</div>
         <h3>We pick from the pot</h3>
         <p>We match the partners the job actually needs — no more, no fewer — and put them under one plan and one point of contact.</p>
       </div>
@@ -349,7 +354,7 @@
       </div>
     </div>
     <div class="diff-two">
-      <div class="diff-item oak">
+      <div class="diff-item teal">
         <h3>We help you decide, not just buy</h3>
         <p>Before anyone quotes you for anything, we work out what you should actually do — so you don't spend a euro solving the wrong problem.</p>
       </div>
@@ -368,8 +373,8 @@
     <h2 class="wide">Four steps. It starts with getting the problem right.</h2>
     <p class="lead sec-intro" style="max-width:760px;">Steps 1–2 are exactly what our own product, the <a href="https://beyondtheorywhatworks.com" target="_blank" rel="noopener" class="inline-link">Beyond Theory Guide</a>, is built to do: work out what to actually do before you spend anything. When the answer is an IT solution, CloudPot takes over for steps 3–4 and delivers it through the partner network.</p>
     <div class="phase-brackets">
-      <div class="phase oak"><span class="bar"></span><span class="plabel">Steps 1–2 · Beyond Theory Guide — figure out what to do</span></div>
-      <div class="phase forest"><span class="bar"></span><span class="plabel">Steps 3–4 · CloudPot — deliver the right solution</span></div>
+      <div class="phase amber"><span class="bar"></span><span class="plabel">Steps 1–2 · Beyond Theory Guide — figure out what to do</span></div>
+      <div class="phase teal"><span class="bar"></span><span class="plabel">Steps 3–4 · CloudPot — deliver the right solution</span></div>
     </div>
     <div class="hair-grid g4">
       <div class="step guide">
@@ -418,7 +423,7 @@
         <div class="guide-div"></div>
         <div class="guide-row"><span class="gn leaf">02</span><div><div class="gt">Decide what to actually do</div><div class="gd">Work out the move that's worth making — before a euro is spent.</div></div></div>
         <div class="guide-div"></div>
-        <div class="guide-row"><span class="gn oak">→</span><div><div class="gt">Hand off to CloudPot</div><div class="gd">When it's an IT job, we deliver it through the pot.</div></div></div>
+        <div class="guide-row"><span class="gn teal">→</span><div><div class="gt">Hand off to CloudPot</div><div class="gd">When it's an IT job, we deliver it through the pot.</div></div></div>
       </div>
     </div>
   </div>
@@ -472,7 +477,7 @@
         <a href="#contact">Contact</a>
       </div>
     </div>
-    <p class="footer-legal">CloudPot is a registered company in the Netherlands (KvK 88275612). Beyond Theory What Works is a product of CloudPot. © 2026 CloudPot. All rights reserved.</p>
+    <p class="footer-legal">CloudPot is a registered company in the Netherlands (KvK 88275612). Beyond Theory What Works is a product of CloudPot. &copy; 2026 CloudPot. All rights reserved.</p>
   </div>
 </footer>
 
